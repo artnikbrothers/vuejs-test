@@ -1,0 +1,76 @@
+@import '~bulma/sass/utilities/all'
+@import './variables'
+
+html
+  box-sizing: border-box
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+  font-size: 100%
+*, *:before, *:after
+  box-sizing: inherit
+
+body
+  font-family: $family-sans-serif
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+  background-color: $body-background
+  font-size: em($font-size-base)
+
+h1
+  font-size: $size-1
+  color: $orange
+h2
+  font-size: $size-2
+h3
+  font-size: $size-3
+h4
+  font-size: $size-4
+h5
+  font-size: $size-5
+h6
+  font-size: $size-6
+
+a
+  color: $link
+
+ul, ol
+  text-align: left
+
+input
+  background-color: $input-bg
+  color: $input-color
+  border: 1px solid $input-border
+  border-radius: $input-border-radius
+  height: $input-height-base
+  padding: 10px 5px
+  outline: 0
+  &:focus
+    border-color: $input-border-focus
+
+button
+  background-color: $light
+  border: 1px solid $grey-light
+  border-radius: $radius-small
+  padding: 5px
+  margin: 5px
+  font-size: $size-6
+  cursor: pointer
+  &:disabled,
+  &[disabled]
+    background: $grey-lighter
+    color: $grey-light
+    opacity: .5
+    cursor: not-allowed
+
+.success
+  color: $success
+.error
+  color: $warning
+
+.container
+  padding-left: 12px
+  padding-right: 12px
+  +widescreen
+    width: 952px
+    padding-left: 0
+    padding-right: 0
