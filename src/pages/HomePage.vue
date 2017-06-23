@@ -1,6 +1,6 @@
 <template>
   <div class="homepage">
-    <router-link :to="{ name: 'profile-page', params: { id: '30678' }}">Open user profile</router-link>
+    <router-link :to="{ name: 'profile-page', params: { id: '30676' }}">Open user profile</router-link>
   </div>
 </template>
 
