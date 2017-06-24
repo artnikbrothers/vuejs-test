@@ -1,14 +1,14 @@
 <template>
   <figure class="item">
-    <router-link class="item__picture__link" :to="link">
+    <a class="item__picture__link" :href="link">
       <template v-for="image in images">
         <img class="item__image" :src="image.small" :alt="truncatedItemTitle">
       </template>
-    </router-link>
+    </a>
     <figcaption class="item__title">
-      <router-link class="item__link" :to="link">
+      <a class="item__link" :href="link">
         {{ truncatedItemTitle }}
-      </router-link>
+      </a>
     </figcaption>
   </figure>
 </template>
