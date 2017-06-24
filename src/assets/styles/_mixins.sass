@@ -15,18 +15,6 @@
     background-image: url($image)
     background-size: $width+px $height+px;
 
-// @mixin breakpoint($point)
-//   @if $point == lg
-//     @media (min-width: 70em)
-//       @content
-//   @else if $point == md
-//     @media (min-width: 64em)
-//       @content
-//   @else if $point == sm
-//     @media (min-width: 50em)
-//       @content
-//   @else if $point == xs
-//     @media (min-width: 37.5em)
-//       @content
-
-
+@mixin center
+  margin-left: auto;
+  margin-right: auto;

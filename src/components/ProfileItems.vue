@@ -17,7 +17,7 @@
         </div>
       </div>
     </div>
-    <div class="profile-items__list columns">
+    <div class="profile-items__list grid-5">
       <profile-item
         class="column"
         v-for="item in items"
@@ -111,19 +111,12 @@ export default {
   margin: 5px 3px
 
 .profile-items__list
-  display: block
   margin-top: 0
-  text-align: center
 
-  +desktop
-    display: block
-    text-align: left
-  
   &.loading
     opacity: .5
 
   .column
-    margin: 10px 12px 9px
-    padding: 0
-    display: inline-block
+    margin-left: 2px
+    margin-right: 2px
 </style>

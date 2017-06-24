@@ -1,10 +1,14 @@
 <template>
-  <div class="item">
-    <a class="item__link" :href="itemLink">
+  <figure class="item">
+    <router-link class="item__picture__link" :to="itemLink">
       <img class="item__image" :src="itemImage" :alt="truncatedItemTitle">
-      <span class="item__title">{{ truncatedItemTitle }}</span>
-    </a>
-  </div>
+    </router-link>
+    <figcaption class="item__title">
+      <router-link class="item__link" :to="itemLink">
+        {{ truncatedItemTitle }}
+      </router-link>
+    </figcaption>
+  </figure>
 </template>
 
 <script>
@@ -37,24 +41,29 @@ export default {
 @import '../assets/styles/variables'
 @import '~sass-ems/index'
 
-.item
-  width: 165px
-  height: 200px
-  margin: 10px 5px 15px
+.item__picture__link
+  display: block
+  height: 0
+  padding-bottom: 100%
+  overflow: hidden
+  position: relative
 
 .item__image
-  width: 100%
-  height: 164px
+  max-width: 100%;
+  height: 100%
+  position: absolute
+  left: 50%
+  transform: translateX(-50%)
 
 .item__link
-  display: inline-block
   text-align: center
+  color: $primary
 
 .item__title
   display: block
-  color: $primary
   font-weight: 600
   line-height: em(18px)
   padding: 0 5px
+  margin-top: 10px
   text-align: left
 </style>

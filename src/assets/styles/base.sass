@@ -1,5 +1,6 @@
 @import '~bulma/sass/utilities/all'
-@import './variables'
+@import './mixins'
+
 
 html
   box-sizing: border-box
@@ -68,9 +69,64 @@ button
   color: $warning
 
 .container
-  padding-left: 12px
-  padding-right: 12px
-  +widescreen
+  padding-left: 6px
+  padding-right: 6px
+  @media (min-width: $break-3)
+    padding-left: 12px
+    padding-right: 12px
+  @media (min-width: $break-5)
     width: 952px
     padding-left: 0
     padding-right: 0
+
+.grid-5
+  +center
+  display: flex
+  flex-direction: row
+  justify-content: space-between
+  flex-wrap: wrap
+  &:after
+    content: ''
+    display: block
+    margin-left: 48.38%
+  @media (min-width: $break-2)
+    +center
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+    flex-wrap: wrap
+    &:after
+      content: ''
+      display: block
+      margin-left: 48.38%
+  @media (min-width: $break-3)
+    &:after
+      margin-left: 31.91%
+  @media (min-width: $break-4)
+    &:after
+      margin-left: 24%
+  @media (min-width: $break-5)
+    &:after
+      margin-left: 18%
+  @media (min-width: layout-ems(996px))
+    padding-left: calc(50% - 462px)
+    padding-right: calc(50% - 462px)
+
+  .column
+    width: 45.1%
+    margin: 10px 5px 15px
+    max-width: px-to-ems(300px)
+    @media (min-width: $break-2)
+      margin-left: 0
+      margin-right: 0
+      max-width: none
+      width: 46.38%
+    @media (min-width: $break-3)
+      width: 30.7%
+    @media (min-width: $break-4)
+      width: 22.4%
+    @media (min-width: $break-5)
+      width: 17.7%
+    padding: 0
+    flex-basis: auto
+    flex-grow: 0  
