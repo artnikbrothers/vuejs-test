@@ -1,10 +1,12 @@
 <template>
   <figure class="item">
-    <router-link class="item__picture__link" :to="itemLink">
-      <img class="item__image" :src="itemImage" :alt="truncatedItemTitle">
+    <router-link class="item__picture__link" :to="link">
+      <template v-for="image in images">
+        <img class="item__image" :src="image.small" :alt="truncatedItemTitle">
+      </template>
     </router-link>
     <figcaption class="item__title">
-      <router-link class="item__link" :to="itemLink">
+      <router-link class="item__link" :to="link">
         {{ truncatedItemTitle }}
       </router-link>
     </figcaption>
@@ -15,23 +17,24 @@
 import { truncateString } from '@/lib/helpers/strings'
 
 export default {
+  name: 'ProfileItem',
   props: {
-    itemImage: {
-      type: String,
+    images: {
+      type: Array,
       require: true
     },
-    itemLink: {
+    link: {
       type: String,
       required: true
     },
-    itemTitle: {
+    title: {
       type: String,
       required: true
     }
   },
   computed: {
     truncatedItemTitle () {
-      return truncateString(this.itemTitle)
+      return truncateString(this.title)
     }
   }
 }

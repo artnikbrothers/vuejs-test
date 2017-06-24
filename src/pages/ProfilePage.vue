@@ -18,44 +18,38 @@
         :profileTotalReviews='user.total_reviews'
         :profileWebsite='user.website'
       />
-      <profile-items
-        :items="profileItems"
-      />
+      <items-explorer :profileId="profileId" />
     </div>
   </div>
 </template>
 
 <script>
 import ProfileDetails from '@/components/ProfileDetails'
-import ProfileItems from '@/components/ProfileItems'
-import { fetchUser, fetchProfileItems } from '../lib/api/api-methods.js'
+import ItemsExplorer from '@/components/ItemsExplorer'
+import { fetchUser } from '@/lib/api/api-methods.js'
 
 export default {
+  name: 'ProfilePage',
   data () {
     return {
       user: {},
-      profileItems: [],
-      isLoading: true
+      boxes: [],
+      items: [],
+      isLoading: true,
+      listType: 'items',
+      profileId: this.$route.params.id
     }
   },
   components: {
     ProfileDetails,
-    ProfileItems
+    ItemsExplorer
   },
-  async created () {
-    let { id } = this.$route.params
-    await Promise.all([
-      fetchUser(id)
-        .then(user => {
-          this.user = user
-        }),
-      fetchProfileItems(id)
-        .then(items => {
-          this.profileItems = items
-        })
-    ])
-
-    this.isLoading = false
+  created () {
+    fetchUser(this.profileId)
+      .then(user => {
+        this.user = user
+        this.isLoading = false
+      })
   }
 }
 </script>

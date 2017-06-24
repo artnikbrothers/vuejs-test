@@ -10,6 +10,7 @@
 
 <script>
 export default {
+  name: 'ProfilePicInfo',
   props: {
     profileNickname: {
       type: String,

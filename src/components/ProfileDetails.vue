@@ -36,25 +36,25 @@
         <ul class="columns profile-details__stats__list">
           <li class="column">
             <a href="#">
-              <span class="profile-details__stats__count">{{ formatedProfileFollowers }}</span>
+              <span class="profile-details__stats__count">{{ formatStat('profileFollowers') }}</span>
               <span class="profile-details__stats__type">Followers</span>
             </a>
           </li>
           <li class="column">
             <a href="#">
-              <span class="profile-details__stats__count">{{ formatedProfileFollowing }}</span>
+              <span class="profile-details__stats__count">{{ formatStat('profileFollowing') }}</span>
               <span class="profile-details__stats__type">Following</span>
             </a>
           </li>
           <li class="column">
             <a href="#">
-              <span class="profile-details__stats__count">{{ formatedProfileItems }}</span>
+              <span class="profile-details__stats__count">{{ formatStat('profileItems') }}</span>
               <span class="profile-details__stats__type">Items</span>
             </a>
           </li>
           <li class="column">
             <a href="#">
-              <span class="profile-details__stats__count">{{ formatedProfileBoxes }}</span>
+              <span class="profile-details__stats__count">{{ formatStat('profileBoxes') }}</span>
               <span class="profile-details__stats__type">Boxes</span>
             </a>
           </li>
@@ -69,6 +69,7 @@ import ProfilePicInfo from './ProfilePicInfo'
 import { abbrNum } from '@/lib/helpers/numbers'
 
 export default {
+  name: 'ProfileDetails',
   props: {
     profileAddress: {
       type: String,
@@ -122,21 +123,10 @@ export default {
   components: {
     ProfilePicInfo
   },
-  computed: {
-    formatedProfileFollowers () {
-      return abbrNum(this.profileFollowers)
-    },
-    formatedProfileFollowing () {
-      return abbrNum(this.profileFollowing)
-    },
-    formatedProfileItems () {
-      return abbrNum(this.profileItems)
-    },
-    formatedProfileBoxes () {
-      return abbrNum(this.profileBoxes)
-    }
-  },
   methods: {
+    formatStat (stat) {
+      return abbrNum(this[stat])
+    },
     addReview (e) {
       console.log(e)
     }
