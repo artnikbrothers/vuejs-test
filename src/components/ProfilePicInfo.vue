@@ -72,7 +72,7 @@ export default {
 .profile-pic-info__nickname
   display: block
   color: $text-light
-  line-height: 16px
+  line-height: 14px
   padding-bottom: 4px
   letter-spacing: -.5px
   font-size: em(13px)
@@ -81,4 +81,5 @@ export default {
   @media (min-width: $break-2)
     font-size: em(15px)
     font-weight: normal
+    line-height: 16px
 </style>

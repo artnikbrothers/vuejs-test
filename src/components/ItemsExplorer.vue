@@ -30,8 +30,8 @@
     </div>
     <grid v-else class="items-explorer__list grid-5" :placeholders="5">
       <profile-item
-        v-if="listType === 'items'"
         class="column"
+        v-if="listType === 'items'"
         v-for="item in items"
         :key="item.id"
         :link="item.share_url"
@@ -39,8 +39,8 @@
         :title="item.name"
       />
       <profile-box
-        v-if="listType === 'boxes'"
         class="column"
+        v-if="listType === 'boxes'"
         v-for="box in boxes"
         :key="box.id"
         :count="box.items_count"
@@ -56,7 +56,7 @@
 import Grid from './Grid'
 import ProfileItem from './ProfileItem'
 import ProfileBox from './ProfileBox'
-import { fetchProfileItems, fetchProfileBoxes } from '../lib/api/api-methods.js'
+import { fetchProfileItems, fetchProfileBoxes } from '@/lib/api/api-methods.js'
 
 export default {
   name: 'ItemsExplorer',
@@ -64,7 +64,7 @@ export default {
     return {
       items: [],
       boxes: [],
-      listType: 'item',
+      listType: 'items',
       isLoading: true
     }
   },
@@ -112,7 +112,7 @@ export default {
     this.listType = this.defaultListType
   },
   created () {
-    if (this.listType) {
+    if (this.listType === 'items') {
       this.fetchItems()
     } else {
       this.fetchBoxes()

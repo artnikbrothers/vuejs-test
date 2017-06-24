@@ -27,7 +27,7 @@
     </div>
     <div class="profile-details__footer">
       <div class="profile-details__reviews">
-        <a href="#" @click.prevent="addReview">
+        <a @click="addReview">
           <i class="profile-details__reviews__icon"></i>
           <span class="profile-details__reviews__stat">{{ profilePositiveReviews }} of {{ profileTotalReviews }} reviews</span>
         </a>
@@ -35,25 +35,25 @@
       <div class="profile-details__stats">
         <ul class="columns profile-details__stats__list">
           <li class="column">
-            <a href="#">
+            <a>
               <span class="profile-details__stats__count">{{ formatStat('profileFollowers') }}</span>
               <span class="profile-details__stats__type">Followers</span>
             </a>
           </li>
           <li class="column">
-            <a href="#">
+            <a>
               <span class="profile-details__stats__count">{{ formatStat('profileFollowing') }}</span>
               <span class="profile-details__stats__type">Following</span>
             </a>
           </li>
           <li class="column">
-            <a href="#">
+            <a>
               <span class="profile-details__stats__count">{{ formatStat('profileItems') }}</span>
               <span class="profile-details__stats__type">Items</span>
             </a>
           </li>
           <li class="column">
-            <a href="#">
+            <a>
               <span class="profile-details__stats__count">{{ formatStat('profileBoxes') }}</span>
               <span class="profile-details__stats__type">Boxes</span>
             </a>

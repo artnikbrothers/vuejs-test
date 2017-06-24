@@ -1,6 +1,6 @@
 <template>
   <figure class="boxes">
-    <router-link class="boxes__picture__link" :to="link">
+    <a class="boxes__picture__link" :href="link">
       <img
         class="boxes__image"
         v-for="image in images"
@@ -12,11 +12,11 @@
         v-if="images.length < 4"
         v-for="n in (4 - images.length)"
         class="boxes__empty"></div>
-    </router-link>
+    </a>
     <figcaption class="boxes__title">
-      <router-link class="boxes__link" :to="link">
+      <a class="boxes__link" :href="link">
         {{ truncatedBoxesTitle }}
-      </router-link>
+      </a>
       <span class="boxes__count">
         {{ formatedBoxesCount }} {{ count | pluralize('item') }}
       </span>
@@ -73,10 +73,9 @@ export default {
 
 .boxes__image,
 .boxes__empty
-  width: calc(50% - 2px)
-  height: calc(50% - 2px)
+  width: calc(50% - 1px)
+  height: calc(50% - 1px)
   position: absolute
-  margin: 0px 1px;
   display: block
 
   &:nth-child(1)
@@ -86,14 +85,14 @@ export default {
     top: 0
     right: 0
   &:nth-child(3)
-    bottom: 2px
+    bottom: 0
     left: 0
   &:nth-child(4)
-    bottom: 2px
+    bottom: 0
     right: 0
 
 .boxes__empty
-  background-color: #e4e4e6
+  background-color: #e3e3e5
 
 .boxes__count
   display: block
