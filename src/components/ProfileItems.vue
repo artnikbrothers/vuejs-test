@@ -65,8 +65,11 @@ export default {
 .profile-items
   display: flex
   flex-wrap: wrap
-  margin-left: 13px
-  margin-right: 12px
+  margin-left: 11px
+  margin-right: 14px
+  @media (min-width: $break-2)
+    margin-left: 13px
+    margin-right: 12px
 
 .profile-items__header
   width: 100%

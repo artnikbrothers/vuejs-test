@@ -223,42 +223,61 @@ export default {
 
 .btn__follow
   border: none
-  width: 75px
-  height: 35px
+  width: 66px;
+  height: 37px;
   background-position: 1px 44px
-  margin-right: 11px
-  margin-top: 2px
+  background-size: 171px 90px;
   padding-left: 2px
   font-size: em(16px)
   font-weight: 500
   letter-spacing: -.5px
+  margin: 2px 0 0
+  @media (min-width:$break-2)
+    margin-right: 11px
+    margin-top: 2px
+  @media (min-width:$break-3)
+    width: 75px
+    height: 35px
+    background-size: 200px, 90px
 
 .btn__message
   margin-right: 3px
+  display: none
+  @media (min-width:$break-3)
+    display: block
 
 .btn__share
   background-position: -31px 0
+  display: none
+  @media (min-width:$break-3)
+    display: block
 
 .btn__more
   background-position: -61px 0
-  margin-right: 4px
+  margin-right: 5px
+  margin-top: 6px
+  @media (min-width: $break-2)
+    margin-top: 6px
 
 .profile-details__stats
-  padding: 5px 0 9px
+  padding: 5px 0 6px
   text-align: center
-  +tablet
+  @media (min-width: $break-3)
     padding-left: 25px
     padding-right: 25px
+    margin-bottom: 9px
 
 .profile-details__stats__list
   text-align: center
   font-weight: 600
   display: inline-block
-  +tablet
+  @media (min-width: $break-3)
     display: flex
 
   li
     display: inline-block
+    padding-left: 10px
+    padding-right: 10px
 
 
   li a span
