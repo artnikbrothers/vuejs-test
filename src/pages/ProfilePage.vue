@@ -57,6 +57,7 @@ export default {
 <style lang="sass" scoped>
 .profile-page__loading
   text-align: center
+  
 .loading
   opacity: .5
 </style>

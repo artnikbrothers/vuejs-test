@@ -9,6 +9,7 @@ import Vue2Filters from 'vue2-filters'
 import '@/assets/styles/main.sass'
 
 Vue.use(Vue2Filters)
+
 sync(store, router)
 
 Vue.config.productionTip = false

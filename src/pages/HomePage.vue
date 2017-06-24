@@ -4,6 +4,12 @@
   </div>
 </template>
 
+<script>
+export default {
+  name: 'HomePage'
+}
+</script>
+
 <style lang="sass" scoped>
   .homepage
     text-align: center
