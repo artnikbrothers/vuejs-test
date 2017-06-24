@@ -1,7 +1,7 @@
 <template>
   <div class="grid">
     <slot></slot>
-    <div v-for="placeholder in placeholders" :class="`placeholders placeholders${placeholder}`"></div>
+    <div v-for="placeholder in placeholders" :class="`placeholders placeholder-${placeholder}`"></div>
   </div>
 </template>
 
