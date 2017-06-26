@@ -255,7 +255,7 @@ export default {
   @media (min-width: $break-3)
     padding-left: 25px
     padding-right: 25px
-    margin-bottom: 9px
+    margin-bottom: 4px
 
 .profile-details__stats__list
   text-align: center

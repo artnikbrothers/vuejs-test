@@ -28,7 +28,7 @@
     <div v-if="isLoading" class="items-explorer__loading">
       <img class="preloader" src="../assets/images/preloader.gif">
     </div>
-    <grid v-else class="items-explorer__list grid-5" :placeholders="5">
+    <grid v-else class="items-explorer__list" :columns="5">
       <profile-item
         class="column"
         v-if="listType === 'items'"
@@ -136,7 +136,7 @@ export default {
 
 .items-explorer__header
   width: 100%
-  padding: 15px 0 9px
+  padding: 15px 0 4px
 
 .items-explorer__header__filters
   text-align: center
@@ -159,7 +159,7 @@ export default {
   display: flex
   justify-content: center
   align-items: center
-  margin-top: 4px
+  margin-top: -1px
 
 .items-explorer__header__filter--list,
 .items-explorer__header__filter--grid
@@ -176,13 +176,14 @@ export default {
 
 .items-explorer__header__filter--grid
   background-position: -152px 0
+  margin-left: 2px
   &.active
     background-position: -152px -28px
 
 .items-explorer__header__filter--sort
   position: absolute
-  right: 0
-  top: 0
+  right: 2px
+  top: 4px
 
 .items-explorer__header__filter--reverse
   width: 24px

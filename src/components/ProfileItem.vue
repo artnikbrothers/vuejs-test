@@ -65,8 +65,9 @@ export default {
 .item__title
   display: block
   font-weight: 600
-  line-height: em(18px)
+  line-height: em(20px)
+  font-size: em(14px)
   padding: 0 5px
-  margin-top: 10px
+  margin-top: 5px
   text-align: left
 </style>

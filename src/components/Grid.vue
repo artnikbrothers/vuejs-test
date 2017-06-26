@@ -30,7 +30,7 @@ export default {
   width: 100%
 
   .column
-    margin: 10px 2px 15px
+    margin: 10px 2px
 
   .column,
   .placeholders
