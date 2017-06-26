@@ -88,50 +88,6 @@ button
     padding-left: 0
     padding-right: 0
 
-.grid-5
-  +center
-  display: flex
-  flex-direction: row
-  justify-content: space-between
-  flex-wrap: wrap
-
-  &:after
-    content: ''
-    display: block
-    margin-left: 48.38%
-
-  @media (min-width: $break-2)
-    +center
-    display: flex
-    flex-direction: row
-    justify-content: space-between
-    flex-wrap: wrap
-  
-  .column
-    margin: 10px 2px 15px
-
-  .column,
-  .placeholders
-    width: 45.1%
-    padding: 0
-    flex-basis: auto
-    flex-grow: 0
-
-    @media (min-width: $break-2)
-      margin-left: 3px
-      margin-right: 3px
-      max-width: none
-      width: 46.38%
-
-    @media (min-width: $break-3)
-      width: 30.7%
-
-    @media (min-width: $break-4)
-      width: 22.4%
-
-    @media (min-width: $break-5)
-      width: 17.7%
-
 .preloader
   width: 38px
   height: 38px
